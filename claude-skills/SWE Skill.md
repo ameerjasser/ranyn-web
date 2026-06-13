@@ -34,6 +34,7 @@ SESSION START CHECKLIST (git health check)
 What type of request?
   ├─ Build / feature / extend ──► PHASE 0 → PHASE 1 → PHASE 2 → PHASE 3
   ├─ Bug / trace / "why" ──────► BUG TRACING PROTOCOL → PHASE 3
+  ├─ Visual / UI design ───────► VISUAL REFINEMENT LOOP (VRL) + PHASE 3
   └─ Review only ──────────────► PHASE 2 (all five lenses) → PHASE 3
        │
        ▼
@@ -129,6 +130,7 @@ the output is a question that wastes the user's time.
 **Definition of done** — always resolve this before building
 - How will correctness be verified? (If user doesn't say: propose a method)
 - Tests: add to existing suite, or create new? (If no test suite visible: ask)
+- Deliverables: code, tests, docs, and (if frontend/UI/visual deliverable) Visual Refinement Loop (VRL) execution.
 - Deliverable scope: function / module / full feature with tests and docs?
 
 ### Inference-first examples

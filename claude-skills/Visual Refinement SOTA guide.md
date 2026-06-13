@@ -48,10 +48,13 @@ Activate this skill whenever you are producing any visual deliverable:
 
 Before writing a single line of code:
 
-1. Read the relevant `SKILL.md` files (frontend-design, pdf, etc.)
-2. Check what rendering tool is available:
+1. Read the relevant `SKILL.md` or system instructions (frontend-design, pdf, etc.)
+2. Check if a rendering tool/Playwright is available in the current environment:
    ```bash
+   # Unix
    which chromium || python3 -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); print('playwright ok'); b.close(); p.stop()"
+   # Windows (PowerShell)
+   Get-Command chromium -ErrorAction SilentlyContinue || python -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); print('playwright ok'); b.close(); p.stop()"
    ```
 3. Confirm you can render to PNG — if not, adapt (use `wkhtmltopdf`, `matplotlib savefig`, or `cairosvg`)
 4. State your design intent in 1 sentence before generating: e.g. *"Bold minimalism: black/white/one accent, oversized type, max whitespace."* This is your north star for critique.
@@ -71,18 +74,25 @@ Save as `poster_v1.html` (or `.py`, `.svg`).
 
 ### Stage 2 — Render to PNG
 
-```bash
-python3 - <<'EOF'
+Run a rendering script utilizing relative or resolved absolute paths:
+
+```python
+# render.py
+import os
+from pathlib import Path
 from playwright.sync_api import sync_playwright
+
+html_path = Path("poster_v1.html").resolve().as_uri()
+png_path = Path("poster_v1.png").resolve()
+
 with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page(viewport={"width": 2480, "height": 3508})
-    page.goto("file:///home/claude/poster_v1.html")
+    page.goto(html_path)
     page.wait_for_timeout(2000)
-    page.screenshot(path="/home/claude/poster_v1.png", full_page=True)
+    page.screenshot(path=str(png_path), full_page=True)
     browser.close()
-print("Rendered: poster_v1.png")
-EOF
+print(f"Rendered: {png_path}")
 ```
 
 For matplotlib: just `plt.savefig("poster_v1.png", dpi=150, bbox_inches='tight')`.
@@ -93,7 +103,7 @@ For matplotlib: just `plt.savefig("poster_v1.png", dpi=150, bbox_inches='tight')
 
 View the rendered PNG with your vision tool. Do **not** critique the code — critique what you **see**.
 
-Run this critique protocol on the image. Be honest and harsh:
+Run this critique protocol on the image. Be honest and harsh, adhering to Telegraphic Mode (concise fragments, direct findings, no filler):
 
 #### The 8-Axis Critique Framework
 
@@ -119,20 +129,20 @@ Write your critique in this format before touching the code:
 
 ```
 CRITIQUE v1 → v2
-=================
-HIERARCHY:    [pass/fail + 1 sentence]
-ALIGNMENT:    [pass/fail + what's misaligned]
-SPACING:      [pass/fail + where]
-TYPOGRAPHY:   [pass/fail + which sizes need changing]
-COLOUR:       [pass/fail + what to fix]
-FIGURES:      [pass/fail + what's wrong]
-IMPRESSION:   [honest 1-sentence gut reaction]
-CONTENT FIT:  [which sections need rebalancing]
+================
+HIERARCHY:   [PASS/FAIL. Detail/finding.]
+ALIGNMENT:   [PASS/FAIL. Misaligned elements.]
+SPACING:     [PASS/FAIL. Cramped/uneven areas.]
+TYPOGRAPHY:  [PASS/FAIL. Required size adjustments.]
+COLOUR:      [PASS/FAIL. Fix contrast/overuse.]
+FIGURES:     [PASS/FAIL. Legibility/overlap issues.]
+IMPRESSION:  [Honest gut reaction in fragments.]
+CONTENT FIT: [Overloaded/empty sections to balance.]
 
-TOP 3 FIXES (in priority order):
-1. [most damaging issue]
-2. [second]
-3. [third]
+TOP 3 FIXES:
+1. [Highest priority issue]
+2. [Second priority]
+3. [Third priority]
 ```
 
 ---
@@ -158,11 +168,16 @@ View `poster_v2.png`. Run the 8-axis critique again. Note what improved and what
 
 ### Stage 6 — Final Output
 
-Copy the best version to outputs:
+Copy the best version to your output/artifact location:
 
 ```bash
-cp /home/claude/poster_v3.html /mnt/user-data/outputs/poster_final.html
-cp /home/claude/poster_v3.png /mnt/user-data/outputs/poster_final.png
+# Unix
+cp poster_v3.html outputs/poster_final.html
+cp poster_v3.png outputs/poster_final.png
+
+# Windows (PowerShell)
+Copy-Item poster_v3.html outputs/poster_final.html
+Copy-Item poster_v3.png outputs/poster_final.png
 ```
 
 Present both files. Write a brief **"What changed between v1 and final"** note so the user understands what was fixed.
