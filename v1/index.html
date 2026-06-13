@@ -15,18 +15,19 @@
     <nav class="border-b border-gray-200 bg-[#e5e5e5]/80 backdrop-blur-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <div class="flex items-center">
-          <div class="text-3xl font-black tracking-tighter flex items-center">
+          <a href="index.html" class="text-3xl font-black tracking-tighter flex items-center no-underline text-text">
             <span style="color:#db2777">&lt;</span>RANYN LABS<span style="color:#db2777">&gt;</span>
-          </div>
+          </a>
         </div>
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="#about" class="hover:text-gray-600 transition-colors">About</a>
-          <a href="#expertise" class="hover:text-gray-600 transition-colors">Expertise</a>
-          <a href="#console" class="hover:text-gray-600 transition-colors">Console</a>
-          <a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a>
+          <a href="index.html" class="hover:text-gray-600 transition-colors text-primary font-bold">Home</a>
+          <a href="about.html" class="hover:text-gray-600 transition-colors">About Us</a>
+          <a href="research.html" class="hover:text-gray-600 transition-colors">Research</a>
+          <a href="industry.html" class="hover:text-gray-600 transition-colors">Industry</a>
+          <a href="contact.html" class="hover:text-gray-600 transition-colors">Contact</a>
         </div>
         <div class="flex items-center gap-6">
-          <a href="#contact" class="bg-warning text-text text-sm font-bold tracking-wide uppercase px-6 py-3 rounded-full hover:brightness-105 transition-all shadow-sm">Talk to us</a>
+          <a href="contact.html" class="bg-warning text-text text-sm font-bold tracking-wide uppercase px-6 py-3 rounded-full hover:brightness-105 transition-all shadow-sm no-underline">Talk to us</a>
         </div>
       </div>
     </nav>
@@ -42,8 +43,8 @@
         Ranyn Labs delivers scalable, secure, and ethical machine learning architectures and IT infrastructure solutions for modern enterprises.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mb-24">
-        <a href="#console" class="bg-[#ff5500] text-white font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:brightness-110 transition-all text-sm w-full sm:w-auto shadow-sm text-center">Run Diagnostics</a>
-        <a href="#contact" class="bg-transparent border border-gray-400 text-gray-800 font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-gray-200 transition-all text-sm w-full sm:w-auto text-center">Inquire Project</a>
+        <a href="index.html#console" class="bg-[#ff5500] text-white font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:brightness-110 transition-all text-sm w-full sm:w-auto shadow-sm text-center no-underline">Run Diagnostics</a>
+        <a href="contact.html" class="bg-transparent border border-gray-400 text-gray-800 font-bold tracking-widest uppercase px-8 py-4 rounded-full hover:bg-gray-200 transition-all text-sm w-full sm:w-auto text-center no-underline">Inquire Project</a>
       </div>
       <div class="bg-white rounded-[2rem] shadow-sm border border-gray-200 flex flex-wrap md:flex-nowrap items-center justify-between w-full max-w-5xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-gray-200">
         <div class="py-6 px-8 flex-1 text-center md:text-left"><div class="text-xs font-bold tracking-tighter text-gray-500 uppercase leading-tight">Expertise</div></div>
@@ -141,7 +142,7 @@
               <div class="connector-line-horizontal w-16 left-[-64px] top-1/2"></div>
               <div class="connector-dot bg-gray-400 left-[-64px] top-1/2 transform -translate-y-1/2 -translate-x-1/2"></div>
               <p class="text-sm text-gray-700 max-w-[200px]">Looking for dedicated high-throughput server deployment?</p>
-              <a href="#contact" class="bg-success text-white text-xs font-bold tracking-wide uppercase px-4 py-3 rounded-full hover:brightness-105 transition-all text-center">Contact DevOps</a>
+              <a href="contact.html" class="bg-success text-white text-xs font-bold tracking-wide uppercase px-4 py-3 rounded-full hover:brightness-105 transition-all text-center no-underline">Contact DevOps</a>
             </div>
           </div>
         </div>
@@ -164,12 +165,12 @@
     </div>
 
     <!-- Contact & Banner -->
-    <div id="contact" class="bg-warning w-full py-16 px-4 relative z-20 flex justify-center mt-12">
+    <div class="bg-warning w-full py-16 px-4 relative z-20 flex justify-center mt-12">
       <div class="bg-[#1a1a1a] text-white rounded-full px-8 py-6 w-full max-w-3xl flex flex-col sm:flex-row items-center justify-between shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
         <div class="text-2xl font-bold tracking-wide mb-4 sm:mb-0">Connect with Ranyn Labs</div>
         <div class="flex gap-6 text-sm font-medium">
-          <a href="#about" class="flex items-center gap-2 hover:text-warning transition-colors"><span class="text-xl">📄</span> View PRD</a>
-          <a href="mailto:info@ranynlabs.com" class="flex items-center gap-2 hover:text-warning transition-colors"><span class="text-xl">💬</span> Get in Touch</a>
+          <a href="about.html" class="flex items-center gap-2 hover:text-warning transition-colors no-underline text-white"><span class="text-xl">📄</span> View PRD</a>
+          <a href="contact.html" class="flex items-center gap-2 hover:text-warning transition-colors no-underline text-white"><span class="text-xl">💬</span> Get in Touch</a>
         </div>
       </div>
     </div>
@@ -179,28 +180,23 @@
       <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
         <div class="flex flex-col gap-4">
           <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-2">Product</h3>
-          <a href="#" class="text-sm hover:text-warning transition-colors">AI Models</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Guardrails</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Diagnostics</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Pricing</a>
+          <a href="industry.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">AI Models</a>
+          <a href="research.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">Guardrails</a>
+          <a href="index.html#console" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">Diagnostics</a>
         </div>
         <div class="flex flex-col gap-4">
           <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-2">Resources</h3>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Documentation</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Research Papers</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Showcase</a>
+          <a href="research.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">Research Papers</a>
+          <a href="about.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">Showcase</a>
         </div>
         <div class="flex flex-col gap-4">
           <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-2">Developers</h3>
-          <a href="#" class="text-sm hover:text-warning transition-colors">API Reference</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">GitHub</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Changelog</a>
+          <a href="https://github.com/amirbaniowda" target="_blank" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">GitHub</a>
         </div>
         <div class="flex flex-col gap-4">
           <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-2">Company</h3>
-          <a href="#" class="text-sm hover:text-warning transition-colors">About Us</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Blog</a>
-          <a href="#" class="text-sm hover:text-warning transition-colors">Contact</a>
+          <a href="about.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">About Us</a>
+          <a href="contact.html" class="text-sm hover:text-warning transition-colors no-underline text-gray-400">Contact</a>
         </div>
       </div>
       <div class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
