@@ -42,60 +42,60 @@
     </header>
 
     <!-- Content Sections -->
-    <div class="max-w-5xl mx-auto px-4 pb-24 relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="main-wrapper">
+      <div class="contact-layout-grid">
         
         <!-- Contact Details & Location -->
-        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+        <div class="section-card" style="margin-bottom: 0; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <h2 class="text-2xl font-black uppercase mb-6 border-b border-gray-100 pb-4">Our Details</h2>
-            <ul class="space-y-6 list-none p-0">
-              <li class="flex items-start gap-4">
-                <span class="text-2xl">📍</span>
+            <ul class="contact-info-list">
+              <li class="contact-info-item">
+                <span class="contact-info-icon">📍</span>
                 <div>
-                  <h3 class="text-sm font-bold uppercase tracking-wider text-primary mb-1">Headquarters</h3>
-                  <p class="text-gray-700 text-sm">Federal Territory of Kuala Lumpur, Malaysia</p>
+                  <h3 class="contact-info-heading">Headquarters</h3>
+                  <p class="contact-info-body">Federal Territory of Kuala Lumpur, Malaysia</p>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <span class="text-2xl">✉️</span>
+              <li class="contact-info-item">
+                <span class="contact-info-icon">✉️</span>
                 <div>
-                  <h3 class="text-sm font-bold uppercase tracking-wider text-primary mb-1">General Inquiries</h3>
+                  <h3 class="contact-info-heading">General Inquiries</h3>
                   <a href="mailto:info@ranynlabs.com" class="text-secondary font-bold text-sm no-underline hover:text-primary transition-colors">info@ranynlabs.com</a>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <span class="text-2xl">💼</span>
+              <li class="contact-info-item">
+                <span class="contact-info-icon">💼</span>
                 <div>
-                  <h3 class="text-sm font-bold uppercase tracking-wider text-primary mb-1">Collaborations</h3>
-                  <p class="text-gray-700 text-sm">Calling students & industry professionals for research and enterprise AI deployments.</p>
+                  <h3 class="contact-info-heading">Collaborations</h3>
+                  <p class="contact-info-body">Calling students & industry professionals for research and enterprise AI deployments.</p>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="bg-slate-900 text-white rounded-xl p-6 mt-8">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-warning mb-2">Diagnostic Shell Status</h3>
-            <p class="text-xs text-gray-400">All neural telemetry metrics online. Connect to telemetry node on home console to view live diagnostics.</p>
+          <div class="bg-slate-900 text-white rounded-xl p-6 mt-8" style="border: 1px solid #334155;">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-warning mb-2" style="font-family: var(--font-family);">Diagnostic Shell Status</h3>
+            <p class="text-xs text-gray-400" style="font-family: var(--font-family); margin-bottom: 0;">All neural telemetry metrics online. Connect to telemetry node on home console to view live diagnostics.</p>
           </div>
         </div>
 
         <!-- Interactive Contact Form -->
-        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+        <div class="section-card" style="margin-bottom: 0;">
           <h2 class="text-2xl font-black uppercase mb-6 border-b border-gray-100 pb-4">Send an Inquiry</h2>
           <form id="contact-form" class="space-y-6">
-            <div class="form-group">
-              <label for="name" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Your Name</label>
-              <input type="text" id="name" name="name" required placeholder="Amir Jaser" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm font-medium">
+            <div class="form-group-custom">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="Amir Jaser">
             </div>
-            <div class="form-group">
-              <label for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
-              <input type="email" id="email" name="email" required placeholder="amir@ranynlabs.com" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm font-medium">
+            <div class="form-group-custom">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="amir@ranynlabs.com">
             </div>
-            <div class="form-group">
-              <label for="message" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Message / Proposal</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Specify your interest: Research collaboration or Enterprise AI agent solution inquiry..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm font-medium resize-none"></textarea>
+            <div class="form-group-custom">
+              <label for="message">Message / Proposal</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Specify your interest: Research collaboration or Enterprise AI agent solution inquiry..." style="resize: none;"></textarea>
             </div>
-            <button type="submit" id="btn-submit" class="w-full bg-primary text-white text-xs font-bold tracking-widest uppercase py-4 rounded-full hover:brightness-105 transition-all shadow-sm">
+            <button type="submit" id="btn-submit" class="btn-pill-submit">
               Submit Inquiry
             </button>
           </form>
